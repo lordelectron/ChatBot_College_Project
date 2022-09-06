@@ -74,6 +74,9 @@ class Bot extends JFrame {
 					/*
 					 * some basic questions are here
 					 */
+					/**
+					 * 
+					 */
 					if (text.contains("hi")) {
 						replyMeth("Hi there");// calling the replymeth(...) method for the answers
 					} else if (text.contains("how are you")) {
