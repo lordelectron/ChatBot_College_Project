@@ -50,8 +50,7 @@ class Bot extends JFrame {
 					// text color
 					area.append("You-->" + text + "\n"); // concatinating the string
 					field.setText("");
-					ChatBotQuestionsAndAnswers botQuestionsAndAnswers = new ChatBotQuestionsAndAnswers();
-					botQuestionsAndAnswers.QuestionAnswers(text, area);
+					ChatBotQuestionsAndAnswers.QuestionAnswers(text, area);
 				}
 			}
 		});

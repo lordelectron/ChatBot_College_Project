@@ -34,19 +34,50 @@ public class ChatBotQuestionsAndAnswers extends JFrame {
 			replyMeth("I was created by a group of students from CSE 2C", area);
 		} else if (text.contains("tell me a joke")) {
 			replyMeth("why did google go the dentist?" + "\n" + "to get its bluetooth checked", area);
-		} else if (text.contains("what can you do?") | text.contains("help")) {
+		} else if (text.contains("what can you do?") | text.contains("assistance"))
+
+		{
 			replyMeth("\nRight now I can do These but I\'m still evolving:\n"
 					+ "1.opening google chrome\n2.opening notepad\n3.printing the date and time\n4.opening youtube using its url\n5.deleting a given file\n6.turning off the pc\n7.restarting the pc\n8.opening a game ",
 					area);
+		} else if (text.contains("today was not a good day")) {
+			replyMeth("I would suggest you to watch some movies", area);
+			replyMeth("opening Fmovies", area);
+			URI uri = null;
+			try {
+				uri = new URI("https://fmovies.hn/"); // the target uniform resource identifier
+			} catch (URISyntaxException e3) {
+				e3.printStackTrace();
+			}
+			try {
+				java.awt.Desktop.getDesktop().browse(uri); // using the desktop class to open the given url
+															// in the default browser
+			} catch (IOException e4) {
+				e4.printStackTrace();
+			}
+			replyMeth("Fmovies opened in browser", area);
+		} else if (text.contains("would you play some music for me")) {
+			replyMeth("Gimme a second", area);
+			URI uri = null;
+			try {
+				uri = new URI("https://open.spotify.com/"); // the target uniform resource identifier
+			} catch (URISyntaxException e3) {
+				e3.printStackTrace();
+			}
+			try {
+				java.awt.Desktop.getDesktop().browse(uri); // using the desktop class to open the given url
+															// in the default browser
+			} catch (IOException e4) {
+				e4.printStackTrace();
+			}
+			replyMeth("spotify opened in browser", area);
 		}
-
 		/*
 		 * advanced features of Mya are listed below 1.opening google chrome 2.opening
 		 * notepad 3.printing the date and time 4.opening youtube using it's url
 		 * 5.deleting a given file 6.turning off the pc 7.restarting the pc 8.opening a
 		 * game
 		 */
-
 		else if (text.contains("open google chrome")) {
 			replyMeth("opening google chrome", area);
 			File file = new File("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"); // storing
@@ -102,6 +133,20 @@ public class ChatBotQuestionsAndAnswers extends JFrame {
 				e4.printStackTrace();
 			}
 			replyMeth("Youtube opened in browser", area);
+		} else if (text.contains("order some food")) {
+			URI uri = null;
+			try {
+				uri = new URI("https://www.swiggy.com/"); // the target uniform resource identifier
+			} catch (URISyntaxException e3) {
+				e3.printStackTrace();
+			}
+			try {
+				java.awt.Desktop.getDesktop().browse(uri); // using the desktop class to open the given url
+															// in the default browser
+			} catch (IOException e4) {
+				e4.printStackTrace();
+			}
+			replyMeth("Swiggy opened in browser successfully", area);
 		} else if (text.contains("delete abc.txt")) {
 			File file = new File("C:\\Users\\Soumyajit\\Desktop\\abc.txt"); // location of the given file
 			if (file.delete()) // using the delete method to delete the file
@@ -134,6 +179,10 @@ public class ChatBotQuestionsAndAnswers extends JFrame {
 			} catch (IOException e6) {
 				System.out.println("Exception: " + e6);
 			}
+		} else if (text.contains("i am feeling very low right now")) {
+			replyMeth(
+					"Have you felt hopeless or thought about hurting yourself?\nI'm here for you.\n Let's call the national Suicide prevention Lifeline at\n 1-800-273 TALK(1-800-273-8255)",
+					area);
 		}
 		/*
 		 * the target application.exe file path has been added to a mew file object that
@@ -153,6 +202,20 @@ public class ChatBotQuestionsAndAnswers extends JFrame {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
+		} else if (text.contains("show helpline numbers of india")) {
+			URI uri = null;
+			try {
+				uri = new URI("https://indianhelpline.com/"); // the target uniform resource identifier
+			} catch (URISyntaxException e3) {
+				e3.printStackTrace();
+			}
+			try {
+				java.awt.Desktop.getDesktop().browse(uri); // using the desktop class to open the given url
+															// in the default browser
+			} catch (IOException e4) {
+				e4.printStackTrace();
+			}
+			replyMeth("Indian Helpline opened in browser successfully", area);
 		} else if (text.contains("search for abc.txt")) {
 			File directory = new File("C:\\Users\\Soumyajit\\Desktop"); // predefined directory
 			String[] flist = directory.list();
@@ -185,6 +248,7 @@ public class ChatBotQuestionsAndAnswers extends JFrame {
 		{
 			replyMeth("STAY HOME STAY SAFE ", area);
 		} else // the default answer for the unknown questions
+
 			replyMeth("I Can't Understand", area);
 
 	}
